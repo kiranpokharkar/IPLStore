@@ -1,0 +1,55 @@
+<div class="container mx-auto p-6"> 
+    <h2 class="text-2xl font-bold text-blue-900 mb-6">🛒 Shopping Cart</h2>
+  
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+      <div *ngIf="cartItems.length > 0; else emptyCart">
+        <div class="grid grid-cols-5 items-center border-b py-4" *ngFor="let item of cartItems">
+          
+          <div class="col-span-1 flex justify-center">
+            <img [src]="item.imageUrl" alt="{{ item.name }}" class="w-20 h-20 rounded-lg shadow-md">
+          </div>
+  
+          <!-- Product Info -->
+          <div class="col-span-2">
+            <p class="font-semibold text-lg text-gray-800 min-h-[48px]">{{ item.name }}</p>
+            <p class="text-gray-600">₹{{ item.price }}</p>
+          </div>
+  
+          <!-- Quantity Controls -->
+          <div class="col-span-1 flex items-center justify-center space-x-2">
+            <button (click)="updateQuantity(item, -1)" class="px-3 py-2 bg-red-500 text-white rounded-l-lg hover:bg-red-700">−</button>
+            <span class="px-4 py-2 bg-gray-100 text-center">{{ item.quantity }}</span>
+            <button (click)="updateQuantity(item, 1)" class="px-3 py-2 bg-green-500 text-white rounded-r-lg hover:bg-green-700">+</button>
+          </div>
+  
+          <!-- Total Price for Item -->
+          <p class="col-span-1 font-semibold text-blue-600 text-right">₹{{ (item.price ?? 0) * (item.quantity ?? 0) }}</p>
+  
+          <!-- Remove Item -->
+          <button (click)="removeItem(item.productId)" class="col-span-1 text-red-500 hover:text-red-700 text-sm">
+            ❌ Remove
+          </button>
+        </div>
+      </div>
+  
+      <!-- Empty Cart Message -->
+      <ng-template #emptyCart>
+        <p class="text-gray-500 text-center">Your cart is empty.</p>
+      </ng-template>
+    </div>
+  
+    <!-- Order Summary -->
+    <div class="mt-6 bg-gray-100 p-6 rounded-lg shadow-lg">
+      <h3 class="text-xl font-semibold text-gray-800">Order Summary</h3>
+      <p class="text-gray-600 mt-2">Total Items: {{ cartItems.length }}</p>
+      <p class="text-lg font-bold text-blue-700 mt-2">Total Amount: ₹{{ totalAmount }}</p>
+  
+      <!-- Ensure Button is Always Below the Total -->
+      <div class="mt-4 flex justify-center">
+        <button (click)="placeOrder()" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-800">
+          Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+  

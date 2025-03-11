@@ -1,0 +1,75 @@
+/* 🌟 Global Background */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f0f2f8;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('assets/bottom-section-bg.svg') no-repeat top left, url('assets/bottom-section-bg.svg') no-repeat top right, url('assets/bottom-section-bg.svg') no-repeat bottom left, url('assets/bottom-section-bg.svg') no-repeat bottom right;
+    background-size: 100vw 300px;
+    background-size: contain;
+    z-index: -1;
+}
+
+/* ✅ IPL-Styled Header */
+.header {
+    background: #041c4a; /* IPL Blue */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
+}
+
+/* 📌 IPL Logo */
+.ipl-logo img {
+    height: 50px;
+}
+
+/* 🔗 Navigation Menu */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* White Text */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #ffcc00; /* IPL Gold on Hover */
+}
+
+/* 🔘 Logout Button */
+.logout-btn {
+    background: white;
+    color: #041c4a;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #e6e6e6;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

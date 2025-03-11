@@ -1,0 +1,43 @@
+.header {
+    display: flex;
+    justify-content: space-between; /* Pushes elements to extreme ends */
+    align-items: center;
+    background-color: #0d47a1; /* Dark blue background */
+    padding: 15px 20px;
+  }
+  
+  .ipl-logo img {
+    height: 50px; /* Adjust logo size */
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ffcc00; /* IPL Gold color on hover */
+  }
+  
+  .logout-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .logout-btn:hover {
+    background-color: #cc0000;
+  }
+  

@@ -1,0 +1,45 @@
+<div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold text-blue-900 mb-6">📦 Your Orders</h2>
+  
+    <!-- Order List -->
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+      <div *ngIf="orders.length > 0; else emptyOrders">
+        
+        <!-- Loop through each order -->
+        <div *ngFor="let order of orders" class="border-b pb-6 mb-6">
+          <div class="flex justify-between items-center mb-2">
+            <p class="text-gray-700">📅 Ordered on: <strong>{{ order.createdAt | date:'medium' }}</strong></p>
+            <p class="text-lg font-bold text-blue-700">Total: ₹{{ order.totalOrderAmount }}</p>
+          </div>
+  
+          <!-- Order Items -->
+          <div class="grid grid-cols-5 items-center border-b py-4" *ngFor="let item of order.items">
+            
+            <!-- Product Image -->
+            <div class="col-span-1 flex justify-center">
+              <img [src]="item.imageUrl || 'assets/default-product.png'" 
+                   alt="{{ item.name }}" class="w-20 h-20 rounded-lg shadow-md">
+            </div>
+  
+            <!-- Product Info -->
+            <div class="col-span-2">
+              <p class="font-semibold text-lg text-gray-800 min-h-[48px]">{{ item.name }}</p>
+              <p class="text-gray-600">₹{{ item.price }}</p>
+            </div>
+  
+            <!-- Quantity -->
+            <p class="col-span-1 text-center font-semibold text-gray-800">x {{ item.quantity }}</p>
+  
+            <!-- Total Price for Item -->
+            <p class="col-span-1 font-semibold text-blue-600 text-right">₹{{ item.price * item.quantity }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Empty Order Message -->
+      <ng-template #emptyOrders>
+        <p class="text-gray-500 text-center">You have no past orders.</p>
+      </ng-template>
+    </div>
+  </div>
+  

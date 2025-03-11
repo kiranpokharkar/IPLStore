@@ -1,0 +1,14 @@
+<div class="login-container">
+    <div class="login-box">
+      <h2 class="text-center text-primary fw-bold">IPL Merchandise Store</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <mat-form-field appearance="outline" class="full-width" underlineHidden>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" required />
+          </mat-form-field>
+        </div>
+        <button type="submit" class="button-9">Login</button>
+      </form>
+    </div>
+  </div>

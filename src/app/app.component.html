@@ -1,0 +1,16 @@
+<div class="header">
+  <div class="ipl-logo">
+      <a href="https://www.iplt20.com">
+          <img src="https://documents.iplt20.com//ipl/assets/images/ipl-logo-new-old.png" alt="IPL Logo">
+      </a>
+  </div>
+  
+  <div class="nav-links" *ngIf="!isLoginPage">
+      <a routerLink="/home">🏠 Home</a>
+      <a routerLink="/orders">📦 Orders</a>
+      <a routerLink="/cart">🛒 Cart</a>
+      <a (click)="logout()">🔓 Logout</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
