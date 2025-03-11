@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
 
+## Backend API Repository
+🔗 **Web API Code:** [ProductService](https://github.com/kiranpokharkar/ProductService)  
+Please ensure that the **API endpoint** in `environment.json` is correctly set as per the server configuration.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
